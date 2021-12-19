@@ -299,6 +299,9 @@ class Stm32Bootloader:
         if self.verbosity >= level:
             print(message, file=sys.stderr)
 
+    def sent_update_command(self):
+        printf("Sent update command on UART")
+        
     def reset_from_system_memory(self):
         """Reset the MCU with boot0 enabled to enter the bootloader."""
         self._enable_boot0(True)
