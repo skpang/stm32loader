@@ -144,6 +144,7 @@ class Stm32Loader:
 
         try:
             print("Activating bootloader (select UART)")
+            self.stm32.sent_update_command()
             self.stm32.reset_from_system_memory()
         except bootloader.CommandError:
             print(
